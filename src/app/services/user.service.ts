@@ -26,5 +26,14 @@ export class UserService {
       })
   }
 
+    
+  login(data:any){
+    return this.httpClient.post(this.url+
+      "/user/login",data,{
+        headers:new HttpHeaders().set('Content-Type','application/json')
+      })
+  }
+
+
 
 }
