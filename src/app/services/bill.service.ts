@@ -14,7 +14,6 @@ export class BillService {
 
 
   generateReport(data:any){
-    console.log("mansur")
     return this.httpClient.post(this.url+
       "/bill/generateReport",data,{
         headers:new HttpHeaders().set('Content-Type','application/json')
@@ -28,4 +27,13 @@ export class BillService {
   getBills(){
     return this.httpClient.get(this.url+"/bill/getBills");
   }
+
+  delete(id:any){
+    return this.httpClient.post(this.url+
+      "/bill/delete/"+id,{
+        headers:new HttpHeaders().set('Content-Type','application/json')
+      });
+  }
+
+
 }
